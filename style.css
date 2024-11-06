@@ -1,0 +1,312 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.logo {
+  flex-grow: 1; /* Permette al logo di occupare spazio e centrarlo */
+  text-align: left; /* Allinea il logo a sinistra per schermi grandi */
+  padding-left: 10px;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#carrello-container {
+  position: relative;
+}
+
+#carrello-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Sovrappone al contenuto della pagina */
+}
+
+.popup-content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 3000; /* Sovrappone al popup */
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px; /* Aumenta la dimensione della 'X' */
+  color: black; /* Colore bianco per la 'X' */
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px; /* Aumenta la dimensione della 'X' */
+  color: whitesmoke; /* Colore bianco per la 'X' */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  height: 400px; /* Altezza aumentata per ingrandire il carosello */
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  object-fit:contain; /* Le immagini si adatteranno mantenendo il loro aspetto */
+  display: none; /* Nasconde tutte le immagini di default */
+}
+
+.carousel-item.active {
+  display: block; /* Mostra solo l'immagine attiva */
+}
+
+
+#sottotitolo{
+  text-align: center;
+  font-size: 30px;
+  user-select: none;
+ 
+  
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.hamburger {
+  display: flex; /* Rendi il menu hamburger sempre visibile */
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+}
+
+.highlight {
+  color: blue; /* Evidenziare il testo di registrazione */
+  cursor: pointer; /* Cursore pointer */
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  display: none; /* Inizialmente nascosto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Sfondo traslucido */
+  justify-content: center;
+  align-items: center;
+  z-index: 1500; /* Sovrappone il menu */
+}
+
+.menu-content {
+    background: transparent; /* Rimuove lo sfondo bianco */
+    width: 80%; /* Larghezza del menu */
+    max-width: 300px; /* Massima larghezza */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.menu-content nav {
+    display: flex;
+    flex-direction: column; /* Colonne per le voci del menu */
+    gap: 20px; /* Spazio tra le voci del menu */
+    margin-top: 30px;
+}
+
+.menu-content nav a {
+    font-size: 20px; /* Aumenta la dimensione del carattere */
+    color: whitesmoke; /* Colore del testo per le voci del menu */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    padding: 10px 0;
+}
+
+.menu-content nav a:hover {
+    text-decoration: underline; /* Sottolinea al passaggio del mouse */
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hamburger {
+      display: flex; /* Mostra il menu hamburger su mobile */
+  }
+
+  .logo {
+      text-align: center; /* Centra il logo su schermi piccoli */
+  }
+
+  nav {
+      flex-direction: row; /* Mantieni la barra di navigazione come riga */
+      flex-wrap: nowrap; /* Non permettere a nav di andare su più righe */
+      overflow: hidden; /* Nascondi eventuali voci in eccesso */
+  } }
+
+
+
+  /* CSS CARRELLO */
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 5px;
+    
+}
+
+
+#cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Spaziatura tra gli articoli */
+}
+
+.cart-item {
+display: flex;
+align-items: center;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 10px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+justify-content: space-between; /* Spaziatura tra gli elementi */
+}
+
+.cart-item-image {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.cart-item-details {
+flex-grow: 1;
+margin-right: 20px; /* Distanza tra i dettagli e il pulsante di rimozione */
+}
+
+.remove-item {
+background-color: transparent;
+border: none;
+color: #ff0000;
+font-size: 20px;
+cursor: pointer;
+}
+h2 {
+  text-align: right; /* Allinea il totale a destra */
+}
+
+#total {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  
+}
+
+#total {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}

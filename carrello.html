@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrello</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="index.html" class="logo">Vintage Store</a>
+        <nav id="navbar">
+            <button id="loginButton">Login</button>
+            <div id="carrello-container">
+                <a href="carrello.html" id="carrello-icon">🛒</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="popup hidden" id="loginPopup">
+        <div class="popup-content">
+            <span class="close-popup" id="closePopup">&times;</span>
+            <div class="form" id="loginForm">
+                <h2>Login</h2>
+                <input type="text" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button>Accedi</button>
+                <p>Non sei registrato? <span class="highlight" id="showRegister">Registrati</span></p>
+            </div>
+            <div class="form hidden" id="registerForm">
+                <h2>Registrazione</h2>
+                <input type="text" placeholder="Nome" required>
+                <input type="text" placeholder="Cognome" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button>Registrati</button>
+                <p>Hai già un account? <span class="highlight" id="showLogin">Login</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-overlay hidden" id="menuOverlay">
+        <div class="menu-content">
+            <span class="close" id="closeMenu">&times;</span>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Prodotti</a>
+                <a href="#">Contatti</a>
+                <a href="#">Home</a>
+                <a href="#">Prodotti</a>
+                <a href="#">Contatti</a>
+                <a href="#">Home</a>
+                <a href="#">Prodotti</a>
+                <a href="#">Contatti</a>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <h2>Il tuo carrello</h2>
+        <div id="cartItems"></div>
+        <h2 id="total"></h2>
+    </main>
+
+    <footer>
+        <p>© 2024 Vintage Store. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="carrello.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
